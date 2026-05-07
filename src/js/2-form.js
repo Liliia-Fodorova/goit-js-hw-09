@@ -4,6 +4,7 @@ const formData = {
 }
 const form = document.querySelector('.feedback-form');
 const STORAGE_KEY = "feedback-form-state";
+
 const saveData = localStorage.getItem(STORAGE_KEY);
 
 if (saveData) {
@@ -12,8 +13,8 @@ if (saveData) {
     formData.email = parsedData.email || "";
     formData.message = parsedData.message || "";
 
-    formData.elements.email.value = parsedData.email;
-    formData.elements.message.value = parsedData.message;
+    form.elements.email.value = formData.email;
+    form.elements.message.value = formData.message;
 }
 
 
